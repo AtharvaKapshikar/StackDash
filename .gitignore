@@ -1,4 +1,5 @@
 .idea/
 target/
+StackDash/src/main/resources/application.properties
 stackdash-client/node_modules/
 stackdash-client/dist/
