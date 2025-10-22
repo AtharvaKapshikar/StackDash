@@ -67,9 +67,9 @@ ng serve
 
 📬 Contact
 
-* Linkedin
-* GitHub
-* atharvakapshikar11@gmail.com
+* Linkedin : https://www.linkedin.com/in/atharva-kapshikar-607199195/
+* GitHub : https://github.com/AtharvaKapshikar?tab=repositories
+* Email : atharvakapshikar11@gmail.com
 
 ---
 
