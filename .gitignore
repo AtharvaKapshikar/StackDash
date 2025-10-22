@@ -1,0 +1,4 @@
+.idea/
+target/
+stackdash-client/node_modules/
+stackdash-client/dist/
