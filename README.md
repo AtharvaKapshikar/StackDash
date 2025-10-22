@@ -38,6 +38,8 @@ ng serve
 
 ---
 
+⚠️ Note: The app.prp file is excluded from this repository to protect sensitive configuration details. Please create your own local version with the required environment-specific settings
+
 ### Access
 • 	Frontend: http://localhost:4200
 • 	Backend: http://localhost:8082
