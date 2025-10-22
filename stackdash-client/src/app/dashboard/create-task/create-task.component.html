@@ -1,0 +1,52 @@
+<div *ngIf="message" class="popup-message" [ngClass]="messageType">
+  {{ message }}
+</div>
+
+<button type="button" class="back-button" routerLink="/admin/tasks">Back</button>
+
+<div class="title">
+  <h1>Create New Task</h1>
+</div>
+<form (ngSubmit)="addTask()" #taskForm="ngForm" class="task-form-grid">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input id="title" type="text" [(ngModel)]="newTask.title" name="title" placeholder="Enter title" required />
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input id="description" type="text" [(ngModel)]="newTask.description" name="description" placeholder="Enter description" required />
+  </div>
+
+  <div class="form-group">
+    <label for="status">Status</label>
+    <select id="status" [(ngModel)]="newTask.status" name="status" aria-placeholder="Select Status" required>
+      <option value="" disabled selected>Select</option>
+      <option value="Pending">Pending</option>
+      <option value="In Progress">In Progress</option>
+      <option value="Completed">Completed</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="dueDate">Due Date</label>
+    <input id="dueDate" type="date" [(ngModel)]="newTask.dueDate" name="dueDate" required />
+  </div>
+
+  <div class="form-group">
+    <label for="assignedById">Assigned By</label>
+    <input id="assignedById" type="number" [(ngModel)]="newTask.assignedById" name="assignedById" required />
+  </div>
+
+  <div class="form-group">
+    <label for="assignedToId">Assigned To</label>
+    <input id="assignedToId" type="number" [(ngModel)]="newTask.assignedToId" name="assignedToId" required />
+  </div>
+
+  <div class="form-actions" id="button-container">
+    <button type="submit" [disabled]="taskForm.invalid">➕ Add Task</button>
+    
+  </div>
+
+
+</form>

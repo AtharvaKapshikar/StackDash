@@ -1,0 +1,42 @@
+ <video autoplay muted loop id="bg-video">
+            <source src="../login3.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"> </div>
+
+
+<div class="verify-container">
+
+  <div class="logo">
+<img class="logo-img" src="logo3.png" alt="StackDash Logo" style="height: 75px;">
+</div>
+
+  <div *ngIf="errorMessage" style="color: red;" >
+          <p>{{ errorMessage }}</p>
+          
+        </div>
+
+        <div *ngIf="successMessage" class="success-message">
+          {{ successMessage }}
+        </div>
+
+
+  <h2 style="color:  #2f3542;;">Verify Your Account</h2>
+  <small>Please enter the 6-digit OTP sent to your email or phone.</small>
+
+  <form [formGroup]="otpForm" (ngSubmit)="onVerify()" class="error">
+
+    <input formControlName="otp" maxlength="6" placeholder="Enter OTP" class="otp-input" />
+    <div  *ngIf="submitted && otpForm.get('otp')?.errors">
+      <small class="error" *ngIf="submitted && otpForm.get('otp')?.errors?.['required']"> OTP is required.</small>
+     <small class="error" *ngIf="submitted && otpForm.get('otp')?.errors?.['pattern']" >
+      OTP must be a 6-digit number.</small>
+    </div>
+
+<div class="button-row">
+    <button class="button-verify" type="submit">Verify</button>
+  
+  <button class="right-btn" type="button" (click)="resendOtp()">Resend OTP</button>
+  </div>
+  </form>
+</div>

@@ -1,0 +1,54 @@
+.curved-header {
+  background-color: #2f3542;
+  color: white;
+//  color: white;
+  padding: 3px 2px;
+  border-bottom-left-radius: 50% 20%;
+  border-bottom-right-radius: 50% 20%;
+}
+
+.logo {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  padding-left: 10px;
+}
+
+.header-row {
+  display: flex;
+//  justify-content: space-between;
+  align-items: center;
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #171802;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.user-details-row {
+  display: flex;
+  flex-direction: row;
+  gap: 100px; /* space between items */
+  align-items: center;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+  font-size: 16px;
+  margin-left: 20px;
+}
+
+.detail {
+  white-space: nowrap; /* prevents line breaks inside each item */
+}
+
+
+.status-section{
+    margin-right: 30px;
+}
+
+

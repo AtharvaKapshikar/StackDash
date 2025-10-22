@@ -1,0 +1,129 @@
+<!--<div class="login-container">
+  Your login form goes here 
+</div>-->
+        <title>StackDash Register</title>
+
+        <video autoplay muted loop id="bg-video" >
+            <source src="../login3.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="video-overlay"> </div>
+
+        <div *ngIf="isLoading" class="loader-overlay">
+          <div class="spinner"></div>
+        </div>
+        
+
+  <div class="register-container">
+
+     <div *ngIf="errorMessage" style="color: red;" >
+          <p>{{ errorMessage }}</p>
+          
+        </div>
+
+        <div *ngIf="successMessage" style="color: green;">
+           <p> {{ successMessage }}</p>
+        </div>
+
+        <!-- <h1 class="logo">Stack<span style="color:rgb(40, 164, 237) ;">Dash</span></h1> -->
+<div class="logo">
+<img class="logo-img" src="logo3.png" alt="StackDash Logo" style="height: 75px;">
+</div>
+
+
+    <h2 style="color: rgb(7, 71, 114);">Register</h2>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <!-- Step 1 -->
+      <div *ngIf="step === 1" class="error">
+        <input class="input" formControlName="firstName" placeholder="First Name"/>
+        <div *ngIf="submitted && registerForm.get('firstName')?.errors">
+          <small class="error" *ngIf="registerForm.get('firstName')?.errors?.['required']">
+            First name is required
+          </small>
+        </div>
+
+        <input  class="input" formControlName="lastName" placeholder="Last Name"/>
+        <div *ngIf="submitted && registerForm.get('lastName')?.errors?.['required']">
+        <small class="error">Last name is required</small> 
+        </div>
+
+        <input  class="input" formControlName="age" type="number" placeholder="Age"/>
+        <div *ngIf="submitted && registerForm.get('age')?.errors">
+          <small class="error" *ngIf="registerForm.get('age')?.errors?.['required']"> Age is required</small>
+          <small class="error" *ngIf="registerForm.get('age')?.errors?.['min']">Minimum 18 age is required</small>
+        </div>
+
+        <input  class="input" formControlName="city" placeholder="City" />
+        <div *ngIf="submitted && registerForm.get('city')?.errors">
+          <small class="error" *ngIf="registerForm.get('city')?.errors?.['required']">City is required</small>
+        </div>
+
+        <input  class="input" formControlName="mobileNumber" placeholder="Mobile Number" />
+        <div *ngIf="submitted && registerForm.get('mobileNumber')?.errors">
+          <small class="error" *ngIf="registerForm.get('mobileNumber')?.errors?.['required']"> Mobile number is required</small>
+          <small class="error" *ngIf="registerForm.get('mobileNumber')?.errors?.['pattern']">Enter a valid 10 digit mobile number</small>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div *ngIf="step === 2" id="error">
+        <input  class="input" formControlName="email" placeholder="Email" id="error" />
+        <div *ngIf="submitted && registerForm.get('email')?.errors">
+          <small class="error" *ngIf="registerForm.get('email')?.errors?.['required']"> Email is required</small>
+          <small class="error" *ngIf="registerForm.get('email')?.errors?.['email']">Enter valid email id</small>
+        </div>
+
+        <input  class="input" formControlName="userName" placeholder="Choose a username" required>
+        <div *ngIf="isUsernameAvailable === false" class="error">
+          Username is already taken.
+        </div>
+        <div *ngIf="isUsernameAvailable === true" class="success">
+          Username is available!
+        </div>
+
+        <input  class="input" formControlName="password" type="password" placeholder="Password" />
+        <div *ngIf="submitted && registerForm.get('password')?.errors" id="error">
+          <small class="error" *ngIf="registerForm.get('password')?.errors?.['required']"> Password is required</small>
+          <small class="error" *ngIf="registerForm.get('password')?.errors?.['min']">Password length should more than 6</small>
+          <small class="error" *ngIf="registerForm.get('password')?.errors?.['pattern']">
+            Password must contain at least one letter, one number, and one special character.
+          </small>
+        </div>
+
+        <input  class="input" formControlName="confirmPassword" type="password" placeholder="Confirm Password" />
+          <div class="error" *ngIf="registerForm.errors?.['passwordMismatch'] && registerForm.get('confirmPassword')?.touched">
+            Passwords do not match.
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div *ngIf="step === 3" id="error">
+        <input  class="input" formControlName="designation" placeholder="Designation" />
+        
+        <input  class="input"  type="file" (change)="onFileSelected($event)" />
+          <label>
+            <input class="checkbox" type="checkbox" formControlName="enabled" />  I accept
+            <span style="color: rgb(58, 114, 192);">Term and Conditions</span>
+            <div *ngIf="submitted && registerForm.get('enabled')?.errors">
+              <small class="error"  *ngIf="registerForm.get('enabled')?.errors?.['requiredTrue']"> Please select the checkbox it is required</small>
+          </div>
+          </label>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="nav-buttons">
+        <button type="button" (click)="prevStep()" *ngIf="step > 1">Back</button>
+        <button type="button" (click)="nextStep()" *ngIf="step < 3">Next</button>
+        <button type="submit" *ngIf="step === 3">Submit</button>
+      </div>
+    </form>
+     Already Registered? <button class="button-login" routerLink="/login">Login</button>
+  </div>
+
+ 
+
+
+
+

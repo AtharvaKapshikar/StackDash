@@ -1,0 +1,32 @@
+
+<div class="dashboard-grid ">
+            <div class="top-grid">
+                <div class="grid-top">
+                    <p class="grid-top-text">Tasks</p>
+                    <p class="grid-top-logo">T</p>
+                </div>
+                <a class="grid-link" routerLink="/admin/tasks">{{ taskCounts?.key }}</a>
+                <p class="grid-p">{{ taskCounts?.value }} completed</p>
+                
+            </div>
+            <div class="top-grid">
+                <div class="grid-top">
+                    <p class="grid-top-text">Users</p>
+                    <p class="grid-top-logo">U</p>
+                </div>
+                <a class="grid-link" routerLink="/admin/users">{{ userCount.userCount }}</a>
+                <p class="grid-p">{{ userCount.activeUser }} Active</p>
+                
+            </div>
+            <div class="top-grid">
+                <div class="grid-top">
+                    <p class="grid-top-text">Project</p>
+                    <p class="grid-top-logo">P</p>
+                </div>
+                <a class="grid-link">5</a>
+                <p class="grid-p">2 completed</p>  
+            </div>            
+</div>
+      <app-graph-component></app-graph-component>
+      <app-all-users-preview></app-all-users-preview>
+      <app-all-tasks-preview></app-all-tasks-preview>

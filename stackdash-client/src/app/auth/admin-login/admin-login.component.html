@@ -1,0 +1,43 @@
+<!--<div class="login-container">
+  Your login form goes here 
+</div>-->
+        <title>StackDash Admin Login</title>
+
+        <video autoplay muted loop id="bg-video">
+            <source src="../login3.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="video-overlay" ></div>
+        
+<div class="login-container ">
+
+    <div class="logo">
+<img class="logo-img" src="logo3.png" alt="StackDash Logo" style="height: 75px;">
+</div>
+
+  <div *ngIf="errorMessage" class="error" >
+          <p>{{ errorMessage }}</p>
+          
+        </div>
+
+        <div *ngIf="successMessage" id="success-message">
+          {{ successMessage }}
+        </div>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+    <h2 style="color: rgb(7, 71, 114);"> Admin Login</h2>
+
+    <input type="text" formControlName="userName" placeholder="Admin username">
+    <div  *ngIf="submitted && loginForm.get('otp')?.errors">
+      <small class="error" *ngIf="submitted && loginForm.get('otp')?.errors?.['required']"> OTP is required.</small>
+    </div>
+    <input type="password" formControlName="password" placeholder="Admin  password">
+  
+    <button class="button-login" type="submit">Login</button>
+  </form>
+
+  <a href="">Forgot password?</a>
+</div>
+
+

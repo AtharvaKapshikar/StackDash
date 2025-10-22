@@ -1,0 +1,42 @@
+<div class="profile-container">
+  <div class="avatar-section">
+    <img class="avatar" [src]="'http://localhost:8082' + user?.profilePicture" alt="Profile Picture" />
+    <h2>{{ user?.firstName }} {{ user?.lastName }}</h2>
+    <p class="designation">{{ user?.designation }}</p>
+    <span class="status" [class.active]="user?.active">{{ user?.active ? 'Active' : 'Inactive' }}</span>
+    <span class="verified" *ngIf="user?.verified">✔ Verified</span>
+  </div>
+
+  <div class="info-section">
+    <div class="info-row">
+      <label>Email:</label>
+      <span>{{ user?.email }}</span>
+    </div>
+    <div class="info-row">
+      <label>Mobile:</label>
+      <span>{{ user?.mobileNumber }}</span>
+    </div>
+    <div class="info-row">
+      <label>Address:</label>
+      <span>{{ user?.city }}</span>
+    </div>
+    <div class="info-row">
+      <label>Age:</label>
+      <span>{{ user?.age }}</span>
+    </div>
+    <div class="info-row">
+      <label>User ID:</label>
+      <span>{{ user?.userId }}</span>
+    </div>
+    <div class="info-row">
+      <label>Roles:</label>
+      <div class="roles">
+        <span class="role-badge" *ngFor="let role of user?.roles">{{ role }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="center-button" *ngIf="user">
+  <button (click)="editUser(user)">Click here to update profile</button>
+</div>

@@ -1,0 +1,9 @@
+<div class="notification-container">
+
+<p>{{errorMsg}}</p>
+
+  <div class="notification-card" *ngFor="let notif of notification">
+    <div class="message">{{ notif.message }}</div>
+    <div class="timestamp">{{ notif.timestamp | date: 'short' }}</div>
+  </div>
+</div>

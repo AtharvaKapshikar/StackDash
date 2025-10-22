@@ -1,0 +1,66 @@
+<!-- 
+
+    <video autoplay muted loop id="bg-video">
+            <source src="../login3.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+    </video>
+<div class="video-overlay"></div>
+    <app-welcome *ngIf="userData" [user]="userData"></app-welcome>
+    
+    <div class="dashboard-grid">
+        <app-profile *ngIf="userData" [user]="userData"></app-profile>
+        <app-activity *ngIf="userData" [user]="userData"></app-activity>
+        <app-tasks></app-tasks>
+    </div>
+        - <app-tasks [tasks]="dashboardData?.tasks"></app-tasks>  -->
+ 
+        <!-- <div class="dashboard-grid ">
+            <div class="top-grid">
+                <div class="grid-top">
+                </div>
+                <div class="grid-top">
+                <app-activity *ngIf="userData" [user]="userData"></app-activity>
+                </div>
+                <div class="grid-top">
+                <app-tasks></app-tasks>
+                </div>
+             </div>
+        </div> -->
+        <!-- admin-layout.component.html -->
+<div class="dashboard-container">
+<nav class="sidebar">
+  
+    <div class="logo">
+<img class="logo-img" src="logo4.png" alt="StackDash Logo" style="height: 50px;">
+</div>
+
+    <ul class="nav-links">
+      <li><a routerLink="/user/dashboard">Dashboard</a></li>
+      <li><a routerLink="/user/profile">Profile</a></li>
+      <li><a routerLink="/user/tasks">Tasks</a></li>
+      <li><a routerLink="/user/notification">Notification</a></li>
+      <li><a routerLink="/user/report">Reports</a>
+      <li><a routerLink="/user/setting">Settings</a>
+    </ul>
+  </nav>
+
+  <div class="main-content">
+    <!-- Top Navbar -->
+    <header class="top-navbar">
+      <div class="title">Welcome! {{userData?.firstName}}</div>
+      <div class="actions">
+        <button routerLink="/logout">Logout</button>
+        <div class="notify-wrapper">
+            <button routerLink="/user/notification">🔔</button>
+            <span class="notify-dot"></span>
+          </div>
+        <button routerLink="/user/profile" >👤</button>
+         <!-- <img class="profile-icon"  routerLink="/user/profile" [src]="'http://localhost:8082' + userData?.profilePicture" alt="Profile Picture" /> -->
+  </div>
+    </header>
+
+  <section class="content-area">
+    <router-outlet></router-outlet>
+    </section>
+   </div> 
+</div>

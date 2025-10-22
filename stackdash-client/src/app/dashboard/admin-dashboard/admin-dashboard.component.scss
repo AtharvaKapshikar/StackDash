@@ -1,0 +1,184 @@
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #2f3542;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-bottom: 15px;
+}
+
+.nav-links button {
+  width: 100%;
+  padding: 10px;
+  background: none;
+  border: none;
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.nav-links button:hover {
+  background-color: #57606f;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Navbar */
+.top-navbar {
+  height: 60px;
+  background-color: #f1f2f6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid #dcdde1;
+}
+
+.top-navbar .title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.top-navbar .actions button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* Content Area */
+.content-area {
+  padding: 20px;
+  background-color: #f5f6fa;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Each card */
+.top-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 180px;
+  padding: 16px;
+  border: 1px solid #dcdde1;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Optional: Add hover effect for interactivity */
+.top-grid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Top row: label + icon */
+.grid-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2px;
+}
+
+.grid-top-text,
+.grid-top-logo {
+ // font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Centered number */
+.grid-link {
+  margin: 0;
+  font-size: 2.9rem;         /* set desired size */
+  text-align: left;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-decoration: none;     /* removes underline */
+  font-family: inherit;
+  outline: none;
+  padding: 0.8rem 1rem;      /* optional: increase clickable area */
+  margin-bottom: 15px;
+}
+.grid-link:any-link{
+  color: #000;
+}
+
+/* Bottom text */
+.grid-p {
+  margin: 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.graph-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.graph-grid {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border: 1px solid #dcdde1;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.graph-grid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+canvas {
+  width: 100% !important;
+  height: 250px !important;
+}

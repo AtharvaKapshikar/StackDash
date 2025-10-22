@@ -1,0 +1,45 @@
+<div class="user-table-container">
+  <h2>Recent Users</h2>
+  <table class="user-table">
+    <thead>
+      <tr>
+        <th>User Id</th>
+        <th>Full name</th>
+        <th>Email</th>
+        <th>Mobile Number</th>
+        <th>Role</th>
+        <th>Designation</th>
+        <th>Status</th>
+        <!-- <th>Actions</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of recentUsers;">
+        <td>{{ user.userId }}</td>
+        <td>{{ user.firstName + " " + user.lastName }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.mobileNumber }}</td>
+        <td>
+            <span *ngFor="let role of user.roles" [ngClass]="getRoleClass(role.name)">
+                {{ role.name }}
+            </span>
+        </td>
+        <td>{{ user.designation }}</td>
+        <td>
+          <span [ngClass]="user.verified ? 'status-active' : 'status-inactive'">
+            {{ user.verified ? 'Active' : 'Inactive' }}
+          </span>
+        </td>
+        <!-- <td>{{ user.createdAt | date: 'mediumDate' }}</td> -->
+        <!-- <td>
+          <button class="action-btn edit" (click)="editUser(user)">Edit</button>
+          <button class="action-btn delete" (click)="deleteUser(user.userId)">Delete</button>
+        </td> -->
+      </tr>
+    </tbody>
+  </table>
+  <div class="button-container">
+    <button routerLink="/admin/users">View All</button>
+</div>
+  
+</div>

@@ -1,0 +1,62 @@
+<div *ngIf="message" class="popup-message" [ngClass]="messageType">
+  {{ message }}
+</div>
+
+<div class="search-container">
+  <input [(ngModel)]="searchTerm" (ngModelChange)="filterUsers()" placeholder="Search user..." />
+  <button (click)="filterUsers()">Search</button>
+  <button routerLink="/register">Create new user</button>
+</div>
+
+<div class="user-table-container">
+  <h2>All Users</h2>
+<div *ngIf="isLoading">Loading users...</div>
+
+  <table class="user-table" *ngIf="!isLoading && filteredUsers.length > 0">
+    <thead>
+      <tr>
+        <th>User Id</th>
+        <th>Full name</th>
+        <th>Email</th>
+        <th>Mobile Number</th>
+        <th>Role</th>
+        <th>Designation</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of filteredUsers">
+        <td>{{ user.userId }}</td>
+        <td>{{ user.firstName + " " + user.lastName }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.mobileNumber }}</td>
+        <td>
+          <span *ngFor="let role of user.roles" [ngClass]="getRoleClass(role.name)">
+            {{ role.name }}
+          </span>
+        </td>
+        <td>{{ user.designation }}</td>
+        <td >
+          <span [ngClass]="user.active ? 'status-active' : 'status-inactive'">
+            {{ user.active ? 'Active' : 'Inactive' }}
+          </span>
+        </td>
+        <td>
+          <button class="action-btn edit" (click)="editUser(user)">Edit</button>
+          <button class="action-btn delete" (click)="deleteUser(user.userId)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+   <div *ngIf="!isLoading && filteredUsers.length === 0">No tasks found.</div>
+
+ <nav *ngIf="totalPages > 1">
+  <ul class="pagination">
+    <li class="page-item" *ngFor="let page of [].constructor(totalPages); let i = index"
+        [class.active]="i === currentPage">
+      <a class="page-link" (click)="loadUsers(i)">{{ i + 1 }}</a>
+    </li>
+  </ul>
+</nav>
+</div>

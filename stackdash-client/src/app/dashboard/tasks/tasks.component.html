@@ -1,0 +1,63 @@
+<div class="user-table-container">
+
+  <div *ngIf="message" class="popup-message" [ngClass]="messageType">
+    {{ message }}
+  </div>
+
+  <div class="search-container">
+    <input [(ngModel)]="searchTerm" (ngModelChange)="filterTasks()" placeholder="Search tasks..." />
+    <button (click)="filterTasks()">Search</button>
+    <button routerLink="/admin/create/task">Create new task</button>
+  </div>
+
+  <h2>All Tasks</h2>
+  <div *ngIf="isLoading">Loading Tasks...</div>
+
+  <table class="user-table" *ngIf="!isLoading && filteredTasks.length > 0">
+    <thead>
+      <tr>
+        <th>Task Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Due Date</th>
+        <th>Assigned By</th>
+        <th>Assigned To</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of filteredTasks">
+        <td>{{ task.id }}</td>
+        <td>{{ task.title }}</td>
+        <td>{{ task.description }}</td>
+        <td>
+          <span [ngClass]="getStatusClass(task.status)">
+            {{ task.status }}
+          </span>
+        </td>
+        <td>{{ task.dueDate ? (task.dueDate | date: 'mediumDate') : 'No due date' }}</td>
+        <td>{{ task.assignedById || '-' }}</td>
+        <td>{{ task.assignedToId || '-' }}</td>
+        <td>
+          <button class="action-btn edit" (click)="editTask(task)">Edit</button>
+          <button class="action-btn delete" (click)="deleteTask(task.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!isLoading && filteredTasks.length === 0">No tasks found.</div>
+
+ <nav *ngIf="totalPages > 1">
+  <ul class="pagination">
+    <li class="page-item" *ngFor="let page of [].constructor(totalPages); let i = index"
+        [class.active]="i === currentPage">
+      <a class="page-link" (click)="loadTasks(i)">{{ i + 1 }}</a>
+    </li>
+  </ul>
+</nav>
+
+</div>
+
+<router-outlet></router-outlet>

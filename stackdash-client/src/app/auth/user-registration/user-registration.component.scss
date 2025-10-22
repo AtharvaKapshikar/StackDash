@@ -1,0 +1,217 @@
+/* 🎥 Background Video */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.621); 
+}
+
+// .logo {
+//   font-size: 1.5rem;
+//   margin-bottom: 30px;
+//    color: #2f3542;
+// }
+.logo {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      color: #2f3542;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  .logo-img {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeSlide 1s ease-out forwards;
+}
+
+@keyframes fadeSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.703); /* 0.5 = 50% opacity black */
+  z-index: -1;
+}
+
+/* 📋 Registration Container */
+.register-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(241, 242, 242, 0.934);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  width: 95%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .register-container {
+    width: 90%;
+    margin: 5vh auto;
+    border-radius: 6px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  input, button {
+    font-size: 1rem;
+    padding: 0.6rem;
+  }
+
+  #bg-video {
+    object-position: center;
+  }
+}
+
+/* 🧾 Form Inputs */
+.input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.input:focus {
+  box-shadow: 0 0 5px rgba(42, 82, 152, 0.5);
+  border-color: #2a5298;
+  outline: none;
+}
+
+/* ✅ Success Field */
+.input.ng-valid.ng-touched {
+  border: 1px solid #2ecc71;
+  box-shadow: 0 0 4px rgba(46, 204, 113, 0.4);
+}
+
+.input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border: 1px solid #e74c3c;
+  box-shadow: 0 0 4px rgba(231, 76, 60, 0.4);
+}
+
+/* 🧾 Error Message Text */
+.error {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: -0.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+  font-weight: 500;
+  text-align: left;
+}
+
+/* ✅ Success Message Text */
+#success {
+  color: #2ecc71;
+  font-size: 0.85rem;
+  margin-top: -0.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+  font-weight: 500;
+  text-align: left;
+}
+
+/* 🟡 Navigation Buttons */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.nav-buttons button {
+  background-color: #2f3542;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.nav-buttons button:hover {
+  background-color: #28A4ED;;
+  transform: scale(1.05);
+}
+
+.nav-buttons button:active {
+  transform: scale(0.98);
+}
+
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  border: 6px solid #ccc;
+  border-top: 6px solid #007bff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  background-color: rgb(14, 198, 235);
+  border: none;
+  border-radius: 3px;
+}
+
+.button-login{
+
+  background-color: rgb(40, 164, 237) ;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.button-login:hover {
+  background-color: rgb(10, 53, 79);;
+}
+

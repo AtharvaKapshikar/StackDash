@@ -1,0 +1,39 @@
+.settings-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.settings-container h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.settings-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-item {
+  background-color: #fff;
+  padding: 1rem 1.2rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.settings-item:hover {
+  background-color: #f0f0f0;
+}
+
+.arrow {
+  font-size: 1.2rem;
+  color: #999;
+}

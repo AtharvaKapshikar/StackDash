@@ -1,0 +1,48 @@
+.top-navbar .title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.top-navbar .actions button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* Content Area */
+.content-area {
+  padding: 20px;
+  background-color: #f5f6fa;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.dashboard-grid {
+  display: grid;
+ 
+  gap: 24px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Each card */
+.top-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 16px;
+  border: 1px solid #dcdde1;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Optional: Add hover effect for interactivity */
+.top-grid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}

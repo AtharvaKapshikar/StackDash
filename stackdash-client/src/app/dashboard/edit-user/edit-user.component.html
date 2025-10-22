@@ -1,0 +1,74 @@
+<div *ngIf="message" class="popup-message" [ngClass]="messageType">
+  {{ message }}
+</div>
+
+<button type="button" class="back-button" routerLink="/admin/users">Back</button>
+
+<div class="title">
+  <h1>Update User</h1>
+</div>
+<form (ngSubmit)="editUser()" #userForm="ngForm" class="user-form-grid">
+  <div class="form-group">
+    <label for="id">User id</label>
+    <input id="id" type="number" [(ngModel)]="user.userId" name="User id" placeholder="Enter Id" required disabled="true"/>
+  </div>
+
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input id="firstName" type="text" [(ngModel)]="user.firstName" name="firstName" placeholder="Enter first name" required />
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input id="lastName" type="text" [(ngModel)]="user.lastName" name="lastName" placeholder="Enter lastName" required />
+  </div>
+
+  <div class="form-group">
+    <label for="age">Age</label>
+    <input id="age" type="text" [(ngModel)]="user.age" name="age" placeholder="Enter Age" required />
+  </div>
+
+  <div class="form-group">
+    <label for="city">Address</label>
+    <input id="city" type="text" [(ngModel)]="user.city" name="city" placeholder="Enter Address" required />
+  </div>
+
+  <div class="form-group">
+    <label for="mobileNumber">Mobile Number</label>
+    <input id="mobileNumber" type="number" [(ngModel)]="user.mobileNumber" name="mobileNumber" required />
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input id="email" type="email"[value]="'✅' + user.email" name=" email" required disabled="true" />
+  </div>
+
+  <div class="form-group">
+    <label for="designation">Designation</label>
+    <input id="designation" type="text" [(ngModel)]="user.designation" name="designation" required />
+  </div>
+
+  <div class="role-checkbox-group">
+  <div *ngFor="let role of availableRoles" class="role-label">
+    <input
+      type="checkbox"
+      [id]="'role-' + role.id"
+      [checked]="isRoleSelected(role)"
+      (change)="onRoleChange($event, role)"
+    />
+    <label [for]="'role-' + role.id">{{ role.name }}</label>
+  </div>
+</div>
+
+
+  <div class="role-checkbox-group">
+    <label for="active">Active</label>
+    <input id="active" type="checkbox" [(ngModel)]="user.active" name="active" />
+  </div>
+
+  <div class="form-actions" id="button-container">
+    <button type="submit" [disabled]="userForm.invalid">Update</button>
+    
+  </div>
+
+</form>

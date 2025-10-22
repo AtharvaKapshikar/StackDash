@@ -1,0 +1,16 @@
+<div class="curved-header">
+ <div class="header-row">
+   <h2 class="logo">StackDash</h2>
+      <div class="user-details">
+        <div class="user-details-row" *ngIf="user">
+          <span class="detail">Welcome, {{ user.firstName }} {{ user.lastName }}</span>
+          <span class="detail">Designation: {{ user.designation }}</span>
+          <span class="detail">Last Login: {{ user.lastLogin.substring(0,18) }}</span>
+          <span class="detail">Status: {{ user.active ? 'Active' : 'Inactive' }}</span>
+        </div>
+      </div>
+    <div class="status-section">
+        <h3 style="text-align: right;">Log out</h3>
+      </div>
+  </div>
+</div>

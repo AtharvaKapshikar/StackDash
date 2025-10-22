@@ -1,0 +1,95 @@
+.user-table-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid #dcdde1;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.user-table-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.user-table th,
+.user-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #dcdde1;
+}
+
+.user-table th {
+  background-color: #2f3542;
+  color: #fff;
+  font-weight: 600;
+}
+
+.status-active {
+  color: #2ed573;
+  font-weight: bold;
+}
+
+.status-inactive {
+  color: #ff4757;
+  font-weight: bold;
+}
+
+.action-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.action-btn.edit {
+  background-color: #1e90ff;
+  color: #fff;
+  margin-right: 5px;
+}
+
+.action-btn.delete {
+  background-color: #ff6b81;
+  color: #fff;
+}
+
+.role-admin { color: #ff4757; font-weight: bold; }
+.role-user { color: #2ed573; font-weight: bold;}
+.role-moderator { color: #1e90ff;font-weight: bold; }
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.button-container button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+  background-color: #0056b3;
+}
+
+.button-container button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}

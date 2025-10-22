@@ -1,0 +1,49 @@
+<div class="user-table-container">
+
+<div *ngIf="message" class="popup-message" [ngClass]="messageType">
+  {{ message }}
+</div>
+
+ <div class="search-container">
+ <input [(ngModel)]="searchTerm" (ngModelChange)="filterTasks()" placeholder="Search tasks..." />
+  <button (click)="filterTasks()">Search</button>
+</div>
+
+
+  <h2>All Tasks</h2>
+
+  <div *ngIf="tasks?.length === 0" class="no-tasks-message">
+    <p>No tasks assigned to you.</p>
+  </div>
+
+  <table class="user-table" *ngIf="tasks.length > 0">
+    <thead class="user-table th">
+      <tr>
+        <th >Task Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Due Date</th>
+        <th></th>
+        <!-- <th>Actions</th> -->
+      </tr>
+    </thead>
+    <tbody class="user-table td">
+      <tr *ngFor="let task of filteredTasks" >
+        <td >{{ task.id }}</td>
+        <td>{{ task.title }}</td>
+        <td>{{ task.description }}</td>
+        <td>
+        <span [ngClass]="getStatusClass(task.status)">
+                {{ task.status}}
+            </span>
+          </td>
+        <td>{{ task.dueDate }}</td>
+        <td ><button class="action-btn edit" (click)="editTask(task)">Update Progress</button></td>
+        <!-- <td>{{ user.createdAt | date: 'mediumDate' }}</td> -->
+      </tr>
+    </tbody>
+  </table>
+<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+</div>

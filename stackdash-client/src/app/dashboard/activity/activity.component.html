@@ -1,0 +1,21 @@
+<div class="top-grid">
+                <div class="grid-top">
+        <h3>📍 Session History</h3>
+        <div *ngFor="let log of sessionLogs">
+            <p>🕒 Last Login: {{ log.loginTime | date:'short' }}</p>
+            <p>🌐 IP: {{ log.ipAddress }}</p>
+            <p>🖥️ Device: {{ log.userAgent }}</p>
+        </div>
+    </div>
+    <!-- <div>
+            <h3>🔔 System Notifications</h3>
+        <div *ngFor="let notif of simpleNotifications" class="notification">
+            <div class="type-indicator" [ngClass]="notif.type"></div>
+            <div class="content">
+                <p>{{ notif.message }}</p>
+                    <small>{{ notif.timestamp | date:'short' }}</small>
+            </div>
+        </div>
+    </div> -->
+
+</div>

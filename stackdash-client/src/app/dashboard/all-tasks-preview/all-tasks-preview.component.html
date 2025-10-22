@@ -1,0 +1,42 @@
+
+<div class="task-table-container">
+  <h2>Latest Tasks</h2>
+   <div *ngIf="isLoading">Loading Tasks...</div>
+
+  <table class="task-table" *ngIf="!isLoading && recenttasks.length > 0">
+    <thead>
+      <tr>
+        <th>Task Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Due Date</th>
+        <th>Assigned By</th>
+        <th>Assigned To</th>
+        <!-- <th>Actions</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of recenttasks;">
+        <td>{{ task.id }}</td>
+        <td>{{ task.title }}</td>
+        <td>{{ task.description }}</td>
+        <td>
+        <span [ngClass]="getStatusClass(task.status)">
+                {{ task.status}}
+            </span>
+          </td>
+        <td>{{ task.dueDate }}</td>
+        <td>{{ task.assignedById }}</td>
+        <td>{{ task.assignedToId }}</td>
+        <!-- <td>{{ user.createdAt | date: 'mediumDate' }}</td> -->
+        <!-- <td>
+          <button class="action-btn edit" (click)="editTask(task)">Edit</button>
+          <button class="action-btn delete" (click)="deleteTask(task.id)">Delete</button>
+        </td> -->
+      </tr>
+    </tbody>
+    </table>
+  <div class="button-container">
+    <button routerLink="/admin/tasks">View All</button>
+</div>

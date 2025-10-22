@@ -1,0 +1,16 @@
+export interface Dashboarduserdto {
+    userId: number;
+  userName: string;
+  firstName: string;
+  lastName: string;
+  designation: string;
+  profilePicture: string;
+  email: string;
+  city: string;
+  mobileNumber:string;
+  age:number;
+  active: boolean;
+  verified: boolean;
+  lastLogin: string;
+  roles: string[];
+}

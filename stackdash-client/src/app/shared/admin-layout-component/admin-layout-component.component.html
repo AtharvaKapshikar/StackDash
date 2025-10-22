@@ -1,0 +1,37 @@
+<!-- admin-layout.component.html -->
+<div class="dashboard-container">
+<nav class="sidebar">
+    
+     <div class="logo">
+<img class="logo-img" src="logo4.png" alt="StackDash Logo" style="height: 50px;">
+</div>
+
+    <ul class="nav-links">
+      <li><a routerLink="/admin/dashboard">Dashboard</a></li>
+      <li><a routerLink="/admin/users">Users</a></li>
+      <li><a routerLink="/admin/tasks">Tasks</a></li>
+      <li><a routerLink="/admin/report">Reports</a>
+      <li><a routerLink="/admin/setting">Settings</a>
+    </ul>
+  </nav>
+
+  <div class="main-content">
+    <!-- Top Navbar -->
+    <header class="top-navbar">
+      <div class="title">Admin Panel</div>
+      <div class="actions">
+        <button routerLink="/logout">Logout</button>
+        <!-- HTML -->
+    <div class="notify-wrapper">
+       <button routerLink="/admin/notify">🔔</button>
+      <span class="notify-dot"></span>
+    </div>
+        <button routerLink="/admin/profile">👤</button>
+      </div>
+    </header>
+
+  <section class="content-area">
+     <router-outlet></router-outlet>
+    </section>
+   </div> 
+</div>

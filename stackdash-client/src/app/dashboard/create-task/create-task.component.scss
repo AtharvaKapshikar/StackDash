@@ -1,0 +1,96 @@
+.task-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  align-items: end;
+  margin-bottom: 32px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+input, select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.form-actions {
+  grid-column: span 2;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #5fe750;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #125ea3;
+}
+
+.back-button{
+  background-color: #2f3542;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+.back-button:hover {
+  background-color: #d7d9db;
+  color: #2f3542;
+}
+
+.title{
+  text-align: center;
+  color: #2f3542;
+}
+
+.popup-message {
+  padding: 12px 20px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.success {
+  background-color: #4caf50;
+  color: white;
+}
+
+.error {
+  background-color: #f44336;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+

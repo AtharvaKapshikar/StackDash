@@ -1,0 +1,42 @@
+<div>
+  <h2>Latest Tasks</h2>
+
+  <!-- Show message if no tasks -->
+  <div *ngIf="recenttasks?.length === 0" class="no-tasks-message">
+    <p>No tasks assigned to you.</p>
+  </div>
+
+  <!-- Show table only if tasks exist -->
+  <table *ngIf="recenttasks.length > 0" class="task-table">
+    <thead>
+      <tr>
+        <th>Task Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Due Date</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of recenttasks">
+        <td>{{ task.id }}</td>
+        <td>{{ task.title }}</td>
+        <td>{{ task.description }}</td>
+        <td>
+          <span [ngClass]="getStatusClass(task.status)">
+            {{ task.status }}
+          </span>
+        </td>
+        <td>{{ task.dueDate }}</td>
+        <td>
+          <button class="action-btn edit" (click)="editTask(task)">Update Progress</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="button-container">
+    <button routerLink="/user/tasks" *ngIf="recenttasks?.length === 0" hidden>View All</button>
+  </div>
+</div>

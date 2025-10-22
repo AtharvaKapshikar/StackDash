@@ -1,0 +1,86 @@
+// .card {
+//   background: #fff;
+//   padding: 24px;
+//   border-radius: 12px;
+//   box-shadow: 0 2px 8px rgba(27, 2, 124, 0.1);
+// }
+
+// .grid{
+//   display: flex;
+//   flex-direction: column;
+//   padding: 5px;
+//   border-radius: 12px;
+//   box-shadow: 0 2px 8px rgba(12, 110, 215, 0.156);
+//   margin: 20px;
+// }
+
+.notification {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.type-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  margin-right: 12px;
+}
+
+.registered { background-color: #4caf50; }   // green
+.verified   { background-color: #2196f3; }   // blue
+.task       { background-color: #ff9800; }   // orange
+.password   { background-color: #9c27b0; }   // purple
+
+.notification-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 6px;
+}
+
+.notification-card {
+  color: antiquewhite;
+  border-left: 4px solid  #333;
+  padding: 2px 6px;
+ margin: 5px;
+  border-radius: 6px;
+  //box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.notification-card:hover {
+  background-color: #eef6ff;
+}
+
+.message {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+}
+
+.timestamp {
+  font-size: 13px;
+  color: #777;
+  margin-top: 4px;
+}
+
+.top-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 16px;
+  border: 1px solid #dcdde1;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Optional: Add hover effect for interactivity */
+.top-grid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
