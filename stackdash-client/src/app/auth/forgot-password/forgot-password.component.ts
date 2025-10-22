@@ -20,6 +20,7 @@ emailSubmitted=false;
 errorMessage = '';
 successMessage= '';
   updatePassForm: FormGroup;
+  isLoading=false;
 
 
 constructor(private fb: FormBuilder, private service: AuthServiceService, private router:Router) {
